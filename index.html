@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/info.css" media="screen">
+
+  </head>
+  <body>
+    <!-- Section 1 -->
+    <div class="front">
+      <!-- TITLE -->
+      <h1 class="title">FUCK IT<br> I DONT CARE<br> I LOVE IT</h1>
+
+      <!-- SOCIAL ICONS -->
+      <div class="social-icons">
+        <a href="https://testnets.opensea.io/collection/gen-art-test" target="_blank">
+          <img class="social-icons-img" src="images/opensea.svg" width="50" height="50">
+        </a>
+        <a href="https://opensea.io/psi_real_" target="_blank">
+          <img class="social-icons-img" src="images/instagram.svg" width="50" height="50">  
+        </a>
+        <a href="https://twitter.com/fuck_it_love_it" target="_blank">
+          <img class="social-icons-img" src="images/twitter.svg" width="50" height="50">  
+        </a>
+      </div>
+      <div class="social-icons"> 
+        <a href="https://mumbai.polygonscan.com/token/0xbfa7e1d5d6e1902c1daaea657dfe4527a9daa84b" target="_blank">
+          <img class="social-icons-img" src="images/polygon-black.svg" width="150" height="30">  
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Section 2 -->
+    <div class="mint-window" >
+      <!-- Connect button and user info-->
+      <div class="menu">
+        <div class="menu-info"><a id="addressDisplay">Address:</a></div>
+        <div class="menu-item"><a id="connectButton">CONNECT</a></div> 
+      </div>
+
+      <div class="img-container">
+        <a id="mint-img-link" href="images/logo.svg" target="_blank">
+          <object id="logo" class="mint-img" type="image/svg+xml" data="images/logo.svg" width="400" height="400"></object>
+        </a>
+   
+          <h4 id="textPrice" class="textPrice slider">PRICE: ? </h4>
+          <h4 id="textSupply" class="textSupply slider">MINTED: ?/1024</h4>      
+          <h5 id="textInfo" class="textInfo slider">Click the CONNECT button, to login with MetaMask.<br>Use the Polygon network.</h5>
+        
+      </div>
+      <!--APPROVE AND MINT buttons-->
+      <div class="sub-title">
+        <button id="approveButton" class="button button1">APPROVE</button>
+        <button id="mintButton" class="button button1">MINT</button>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="text-window">
+        <h4 id="textInfo" class="sub-title">JUST A FEW WORD:</h4>
+        <ul>
+          <li>You can view the collection on <a class="links" href="https://testnets.opensea.io/collection/gen-art-test" target="_blank">OpenSea</a>.</li>
+          <li>Verified ERC721 contract: <a class="links" href="https://mumbai.polygonscan.com/token/0xbfa7e1d5d6e1902c1daaea657dfe4527a9daa84b" target="_blank">0xbfA7E1d5d6e1902c1dAAEa657DFe4527A9DAA84B</a></li>
+          <li>The native file is an SVG file (Scalable Vector Graphics), which means you can render it to png or jpeg with the resolution you desire! 
+            Click on our logo or your NFT, once you minted, and zoom to understand better. </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer" style="text-align: center; padding: 5px;">
+       <!-- SOCIAL ICONS -->
+       <div class="social-icons">
+        <a href="https://testnets.opensea.io/collection/gen-art-test" target="_blank">
+          <img  src="images/opensea.svg" width="30" height="30">
+        </a>
+        <a href="https://opensea.io/psi_real_" target="_blank">
+          <img  src="images/instagram.svg" width="30" height="30">  
+        </a>
+        <a href="https://twitter.com/fuck_it_love_it" target="_blank">
+          <img  src="images/twitter.svg" width="30" height="30">  
+        </a>
+      </div>
+      <div class="social-icons"> 
+        <a href="https://mumbai.polygonscan.com/token/0xbfa7e1d5d6e1902c1daaea657dfe4527a9daa84b" target="_blank">
+          <img  src="images/polygon-black.svg" width="100" height="20">  
+        </a>
+      </div>
+
+    
+      <p>Created by Psi</p>
+    </div>
+
+    <!-- Loading -->
+    <div class="loader-wrapper">
+      <span class="loader">
+        <img src="images/logo_animated.svg" width="400" height="400">
+        </span>
+    </div>   
+  </body>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/solidity_abi.js"></script>
+    <script src="js/app.js"></script>
+</html> 
