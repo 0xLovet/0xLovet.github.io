@@ -47,8 +47,9 @@ const smallAddressFormat = () => {
 }
 
 const getBG = () => {
-	var n = Math.floor(Math.random() * MAX_SUPPLY)
-	return "linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0)) ,url('https://ipfs.io/ipfs/QmWCCqBcpyu7B2VpDR5wN4qPUEHMF5hyfUEr9YnANLw4Vz/" + n + ".svg'";
+	var n = Math.floor(Math.random() * MAX_SUPPLY);
+	document.getElementById("bgNumber").innerHTML = "#" + n;
+	return "linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0)) ,url('https://ipfs.io/ipfs/QmQ4JgsyDsugEHqc6BtSBT8wPcHAX6LN2yHyY2rDsvkmd1/" + n + ".svg'";
 } 
 
 /* Vivus */
