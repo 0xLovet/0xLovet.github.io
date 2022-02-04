@@ -49,7 +49,7 @@ const smallAddressFormat = () => {
 const getBG = () => {
 	var n = Math.floor(Math.random() * MAX_SUPPLY);
 	document.getElementById("bgNumber").innerHTML = "#" + n;
-	document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0)) ,url('https://ipfs.io/ipfs/QmQ4JgsyDsugEHqc6BtSBT8wPcHAX6LN2yHyY2rDsvkmd1/" + 741 + ".svg'";
+	document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0)) ,url('https://ipfs.io/ipfs/QmQ4JgsyDsugEHqc6BtSBT8wPcHAX6LN2yHyY2rDsvkmd1/" + n + ".svg'";
 } 
 
 /* Vivus */
