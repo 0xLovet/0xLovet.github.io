@@ -49,7 +49,7 @@ const smallAddressFormat = () => {
 const getBG = () => {
 	var n = Math.floor(Math.random() * MAX_SUPPLY);
 	document.getElementById("bgNumber").innerHTML = "#" + n;
-	return "linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0)) ,url('https://ipfs.io/ipfs/QmQ4JgsyDsugEHqc6BtSBT8wPcHAX6LN2yHyY2rDsvkmd1/" + n + ".svg'";
+	document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0)) ,url('https://ipfs.io/ipfs/QmQ4JgsyDsugEHqc6BtSBT8wPcHAX6LN2yHyY2rDsvkmd1/" + 741 + ".svg'";
 } 
 
 /* Vivus */
@@ -75,7 +75,7 @@ const initialize = () => {
 	mintButton.disabled = true;
 
 	//Bg image
-	document.body.style.backgroundImage = getBG();
+	getBG();
   
 	const MetaMaskClientCheck = () => {
 	if (!isMetaMaskInstalled()) {
@@ -350,3 +350,4 @@ const initialize = () => {
 }
 
 window.addEventListener('DOMContentLoaded', initialize)
+

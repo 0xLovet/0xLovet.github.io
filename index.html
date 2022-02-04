@@ -41,7 +41,7 @@
 
       <div class="img-container">
         <a id="mint-img-link" href="images/logo.svg" target="_blank">
-          <object id="logo" class="mint-img" type="image/svg+xml" data="images/logo.svg" width="400" height="400"></object>
+          <object id="logo" class="mint-img" type="image/svg+xml" data="images/logo.svg"></object>
         </a>
    
           <h4 id="textPrice" class="textPrice slider">PRICE: ? </h4>
@@ -60,7 +60,7 @@
         <h4 class="center" >Info</h4>
         <ul>
           <li>You can view the collection on <a class="links" href="https://testnets.opensea.io/collection/gen-art-test" target="_blank">OpenSea</a>.</li>
-          <li>Verified ERC721 contract: <a class="links" href="https://mumbai.polygonscan.com/token/0xbfa7e1d5d6e1902c1daaea657dfe4527a9daa84b" target="_blank">0xbfA7E1d5d6e1902c1dAAEa657DFe4527A9DAA84B</a></li>
+          <li>Verified ERC721 contract: <a class="links" href="https://mumbai.polygonscan.com/token/0xbfa7e1d5d6e1902c1daaea657dfe4527a9daa84b" target="_blank">0xbfA7E1d5d6e1902c1dAAEa657DFe<br class="mobile-break">4527A9DAA84B</a></li>
           <li>The native file is an SVG file (Scalable Vector Graphics), which means you can render it to png or jpeg with the resolution you desire! 
             Click on our logo or your NFT, once you minted, and zoom to understand better. </li>
         </ul>
@@ -97,11 +97,10 @@
 
     <!-- Loading -->
     <div class="loader-wrapper">
-      <span class="loader">
-        <img src="images/logo_animated.svg" width="400" height="400">
-        </span>
+      <img class="loader" src="images/logo_animated.svg" >
+
     </div>  
-     
+
   </body>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
