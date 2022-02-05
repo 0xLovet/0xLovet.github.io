@@ -5,6 +5,7 @@ body {
     background-color: blue;
     height: 100%;
     width: 100%;
+    background: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -197,6 +198,10 @@ background-color: rgba(0, 0, 0, 0.9);
 .mobile-break { 
   display: inherit;
 }
-
 }
+@media screen and (max-width: 900px) {
 
+body{
+  background-attachment: scroll;
+}
+}
