@@ -151,7 +151,7 @@ const initialize = () => {
 						mintButton.disabled = false;
 						approved = true;
 						img.data = "images/logo.svg";
-						textInfo.innerHTML = "Tx confirmed!<br>Click MINT to get your " + mintAmount + " $FITLIT."
+						textInfo.innerHTML = "Tx confirmed!<br>Click MINT to get your " + mintAmount + " $LOVET."
 					}
 					else{
 						textInfo.innerHTML = "Something goes wrong, check the transaction and retry."
@@ -169,7 +169,7 @@ const initialize = () => {
 		}    		
 	};
 
-	/* LOAD METADATA + IMAGE FROM IPFS */
+	/* LOAD METADATA + IMAGE FROM IPFS (add metadata attribute 2) */
 	const get_img = async (tokenId) => {
 		//Get metadata from contract
 		nft_contract.methods.tokenURI(tokenId).call().then( async function (result) {
@@ -304,7 +304,7 @@ const initialize = () => {
 			const response = await nft_contract.methods.balanceOf(ethereum.selectedAddress).call().then(async function (result) {
 				tokenBalance = parseInt(result);
 				if ( tokenBalance >= maxTokenWallet ) {
-					textInfo.innerHTML = "You already have enough $FITLIT!"
+					textInfo.innerHTML = "You already have enough $LOVET!"
 					return false;
 				}
 				else {

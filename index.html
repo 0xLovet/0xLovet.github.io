@@ -2,7 +2,31 @@
 <html>
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/info.css" media="screen">
+  <link rel="stylesheet" href="css/home.css" media="screen">
+  <title>Fuck it, I Love it</title>
+  <meta name="title" content="Fuck it, I Love it">
+  <meta name="keywords" content="NFT, NFTs, Polygon, OpenSea, generative art, python, solidity.">
+  <meta name="description" content="Fuck it, I don't care, I Love it. Rulebreaker NFT collection, 1024 Generative Art pieces on Polygon.">
+  <meta name="author" content="Psi">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fuck it, I Love it">
+  <meta property="og:description" content="Fuck it, I don't care, I Love it. Rulebreaker NFT collection, 1024 Generative Art pieces on Polygon.">
+  <meta property="og:image" content="images/logo.svg">
+  <meta property="og:url" content="https://name.github.io">
+  <link rel="icon" href="images/logo.svg">
+  <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Fuck it, I Love it",
+		"logo": "images/logo.svg",
+		"sameAs": [
+				"https://discord.com/invite/wRmVw9VHH5",
+				"https://twitter.com/fuckit_loveit",
+				"https://www.instagram.com/hyperspace.nft/"
+		]
+  }</script>
+
+  
 
   </head>
   <body>
@@ -11,7 +35,7 @@
       <!-- TITLE -->
       <h1 class="title">FUCK IT<br> I DONT CARE<br> I LOVE IT</h1>
 
-      <!-- SOCIAL ICONS -->
+      <!-- Social Icons -->
       <div class="social-icons">
         <a href="https://testnets.opensea.io/collection/gen-art-test" target="_blank">
           <img class="social-icons-img" src="images/opensea.svg" width="50" height="50">
@@ -33,29 +57,31 @@
 
     <!-- Section 2 -->
     <div class="mint-window" >
-      <!-- Connect button and user info-->
+
+      <!-- Connect button and user address -->
       <div class="menu">
         <div class="menu-info"><a id="addressDisplay">Address:</a></div>
         <div class="menu-item"><a id="connectButton">CONNECT</a></div> 
       </div>
-
+      
+      <!-- Image and base info-->
       <div class="img-container">
         <a id="mint-img-link" href="images/logo.svg" target="_blank">
           <object id="logo" class="mint-img" type="image/svg+xml" data="images/logo.svg"></object>
         </a>
    
-          <h4 id="textPrice" class="textPrice slider">PRICE: ? </h4>
-          <h4 id="textSupply" class="textSupply slider">MINTED: ?/1024</h4>      
-          <h5 id="textInfo" class="textInfo slider">Click the CONNECT button, to login with MetaMask.<br>Use the Polygon network.</h5>
-        
+        <h4 id="textPrice" class="textPrice slider">PRICE: ? </h4>
+        <h4 id="textSupply" class="textSupply slider">MINTED: ?/1024</h4>      
+        <h5 id="textInfo" class="textInfo slider">Click the CONNECT button, to login with MetaMask.<br>Use the Polygon network.</h5>
       </div>
-      <!--APPROVE AND MINT buttons-->
+
+      <!--APPROVE and MINT buttons-->
       <div class="center">
         <button id="approveButton" class="button button1">APPROVE</button>
         <button id="mintButton" class="button button1">MINT</button>
       </div>
 
-      <!-- Section 3 -->
+      <!-- Info -->
       <div class="text-window">
         <h4 class="center" >Info</h4>
         <ul>
@@ -67,9 +93,10 @@
       </div>
     </div>
 
-    <div class="footer" style="text-align: center; padding: 5px;">
-       <!-- SOCIAL ICONS -->
-       <div class="social-icons">
+    <!-- Footer -->
+    <div class="footer">
+       <!-- Social Icons -->
+      <div class="social-icons">
         <a href="https://testnets.opensea.io/collection/gen-art-test" target="_blank">
           <img  src="images/opensea.svg" width="30" height="30">
         </a>
@@ -85,8 +112,6 @@
           <img  src="images/polygon-black.svg" width="100" height="20">  
         </a>
       </div>
-
-    
       <p>Created by Psi</p>
     </div>
 
