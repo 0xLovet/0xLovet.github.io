@@ -4,25 +4,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/home.css" media="screen">
   <title>Fuck it, I Love it</title>
-  <meta name="title" content="Fuck it, I Love it">
+  <meta name="title" content="Fuck it, I don't care, I Love it">
   <meta name="keywords" content="NFT, NFTs, Polygon, OpenSea, generative art, python, solidity.">
-  <meta name="description" content="Fuck it, I don't care, I Love it. Rulebreaker NFT collection, 1024 Generative Art pieces on Polygon.">
+  <meta name="description" content="Fuck it, I don't care, I Love it. 1024 NFTs of Generative Art pieces on Polygon.">
   <meta name="author" content="Psi">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Fuck it, I Love it">
   <meta property="og:description" content="Fuck it, I don't care, I Love it. Rulebreaker NFT collection, 1024 Generative Art pieces on Polygon.">
   <meta property="og:image" content="images/logo.svg">
-  <meta property="og:url" content="https://name.github.io">
+  <meta property="og:url" content="https://fuckitloveit.github.io">
   <link rel="icon" href="images/logo.svg">
   <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
-		"name": "Fuck it, I Love it",
+		"name": "Fuck it, I don't care, I Love it",
 		"logo": "images/logo.svg",
 		"sameAs": [
-				"https://discord.com/invite/wRmVw9VHH5",
-				"https://twitter.com/fuckit_loveit",
-				"https://www.instagram.com/hyperspace.nft/"
+				"https://twitter.com/fuck_it_love_it",
+				"https://www.instagram.com/fuck_it_love_it_/"
 		]
   }</script>
 
@@ -35,12 +34,17 @@
       <!-- TITLE -->
       <h1 class="title">FUCK IT<br> I DONT CARE<br> I LOVE IT</h1>
 
+      <!-- Countdown and mint now button-->
+      <div class="center">
+        <a id="countdownButton" class="button button1" href="#mint-window">MINT NOW</a>
+      </div>
+      
       <!-- Social Icons -->
       <div class="social-icons">
-        <a href="https://testnets.opensea.io/collection/gen-art-test" target="_blank">
+        <a href="https://opensea.io/collection/gen-art-test" target="_blank">
           <img class="social-icons-img" src="images/opensea.svg" width="50" height="50">
         </a>
-        <a href="https://opensea.io/psi_real_" target="_blank">
+        <a href="https://opensea.io/fuck_it_love_it_" target="_blank">
           <img class="social-icons-img" src="images/instagram.svg" width="50" height="50">  
         </a>
         <a href="https://twitter.com/fuck_it_love_it" target="_blank">
@@ -48,7 +52,7 @@
         </a>
       </div>
       <div class="social-icons"> 
-        <a href="https://mumbai.polygonscan.com/token/0xbfa7e1d5d6e1902c1daaea657dfe4527a9daa84b" target="_blank">
+        <a href="https://polygonscan.com/token/0xbfa7e1d5d6e1902c1daaea657dfe4527a9daa84b" target="_blank">
           <img class="social-icons-img" src="images/polygon-black.svg" width="150" height="30">  
         </a>
       </div>
@@ -56,12 +60,11 @@
     </div>
 
     <!-- Section 2 -->
-    <div class="mint-window" >
+    <div id="mint-window" class="mint-window" >
 
-      <!-- Connect button and user address -->
-      <div class="menu">
-        <div class="menu-info"><a id="addressDisplay">Address:</a></div>
-        <div class="menu-item"><a id="connectButton">CONNECT</a></div> 
+      <!-- onnect Button -->
+      <div class="connect">
+        <div class="button button1"><a id="connectButton" >CONNECT</a></div>
       </div>
       
       <!-- Image and base info-->
@@ -81,26 +84,17 @@
         <button id="mintButton" class="button button1">MINT</button>
       </div>
 
-      <!-- Info -->
-      <div class="text-window">
-        <h4 class="center" >Info</h4>
-        <ul>
-          <li>You can view the collection on <a class="links" href="https://testnets.opensea.io/collection/gen-art-test" target="_blank">OpenSea</a>.</li>
-          <li>Verified ERC721 contract: <a class="links" href="https://mumbai.polygonscan.com/token/0xbfa7e1d5d6e1902c1daaea657dfe4527a9daa84b" target="_blank">0xbfA7E1d5d6e1902c1dAAEa657DFe<br class="mobile-break">4527A9DAA84B</a></li>
-          <li>The native file is an SVG file (Scalable Vector Graphics), which means you can render it to png or jpeg with the resolution you desire! 
-            Click on our logo or your NFT, once you minted, and zoom to understand better. </li>
-        </ul>
-      </div>
+      <div style="height: 100px;"></div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
        <!-- Social Icons -->
       <div class="social-icons">
-        <a href="https://testnets.opensea.io/collection/gen-art-test" target="_blank">
+        <a href="https://opensea.io/collection/gen-art-test" target="_blank">
           <img  src="images/opensea.svg" width="30" height="30">
         </a>
-        <a href="https://opensea.io/psi_real_" target="_blank">
+        <a href="https://opensea.io/fuck_it_love_it_" target="_blank">
           <img  src="images/instagram.svg" width="30" height="30">  
         </a>
         <a href="https://twitter.com/fuck_it_love_it" target="_blank">
@@ -108,11 +102,11 @@
         </a>
       </div>
       <div class="social-icons"> 
-        <a href="https://mumbai.polygonscan.com/token/0xbfa7e1d5d6e1902c1daaea657dfe4527a9daa84b" target="_blank">
+        <a href="https://polygonscan.com/token/0xbfa7e1d5d6e1902c1daaea657dfe4527a9daa84b" target="_blank">
           <img  src="images/polygon-black.svg" width="100" height="20">  
         </a>
       </div>
-      <p>Created by Psi. v1.0.0</p>
+      <h5 style="font-size: 10px;">Created by Psi. v1.0.0</h5>
     </div>
 
     <!-- BG number -->
@@ -127,6 +121,7 @@
     </div>  
 
   </body>
+ 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>

@@ -1,10 +1,10 @@
-const NFT_ADDRESS = "0xbfA7E1d5d6e1902c1dAAEa657DFe4527A9DAA84B"; //GARTT on mumbai
-const TOKEN_ADDRESS = "0xe07D7B44D340216723eD5eA33c724908B817EE9D"; //USDT on mumbai
+const NFT_ADDRESS = "0x5fB74c1597D43db0b326E27f8acd2270f80eC2e0"; //LOVET (Polygon)
+const TOKEN_ADDRESS = "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"; //WETH (Polygon)
+const IPFS_GATEWAY = "https://gateway.pinata.cloud/ipfs/"
 const MAX_MINT_AMOUNT = 1;
 const MAX_SUPPLY = 1024;
-const CHAIN_ID = 80001;
+const CHAIN_ID = 137;
 
-//Basic Actions Section
 const connectButton = document.getElementById('connectButton');
 const addressDisplay = document.getElementById("addressDisplay");
 const approveButton = document.getElementById("approveButton");
@@ -24,6 +24,8 @@ var cost;
 var maxTokenWallet;
 var tokenBalance;
 var maxMintable;
+var paused;
+
 
 const sleep = (milliseconds) => {
 	return new Promise(resolve => setTimeout(resolve, milliseconds))
@@ -49,43 +51,46 @@ const smallAddressFormat = () => {
 const getBG = () => {
 	var n = Math.floor(Math.random() * MAX_SUPPLY);
 	document.getElementById("bgNumber").innerHTML = "#" + n;
-	document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0)) ,url('https://ipfs.io/ipfs/QmQ4JgsyDsugEHqc6BtSBT8wPcHAX6LN2yHyY2rDsvkmd1/" + n + ".svg'";
-} 
+	document.body.style.backgroundImage = "url('" + IPFS_GATEWAY + "QmQ4JgsyDsugEHqc6BtSBT8wPcHAX6LN2yHyY2rDsvkmd1/" + n + ".svg'";
+}	
 
-/* Vivus */
-new Vivus('logo',
-        {
-          type: "delayed",
-          duration: 100,
-          start: "inViewport"
-});
-/* Loading */
-$(window).on("load",function(){
-	$(".loader-wrapper").fadeOut("slow");
-});
+const countdown = () => {
+	var countDownDate = new Date("Feb 21, 2022 20:00:00").getTime();
+	var x = setInterval(function() {
+		var now = new Date().getTime();
+		var distance = countDownDate - now;
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		document.getElementById("countdownButton").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("countdownButton").innerHTML= "MINT NOW"
+		}
+	}, 1000);
+}
 
 const initialize = () => {
-	
-	//init
+
     const web3 = new Web3(window.ethereum);
-	const nft_contract = new web3.eth.Contract(nft_abi, NFT_ADDRESS);	
-	const token_contract = new web3.eth.Contract(token_abi, TOKEN_ADDRESS);	//?
+	const nft_contract = new web3.eth.Contract(nft_abi, NFT_ADDRESS);
 
 	approveButton.disabled = true;
 	mintButton.disabled = true;
 
-	//Bg image
 	getBG();
-  
+	countdown();
+
 	const MetaMaskClientCheck = () => {
 	if (!isMetaMaskInstalled()) {
 		connectButton.innerHTML = "Please install MetaMask!";
-	} else {
-		
-	}
+	} else {connectButton.innerHTML = "CONNECT";}
 	};
 
-	/* CONNECT BUTTON */
+	/* CONNECT button */
 	connectButton.onclick = async () => {
 		connectButton.disabled=true;
 		try {
@@ -97,7 +102,7 @@ const initialize = () => {
 			if(chainId == CHAIN_ID ){ 
 				connectButton.innerHTML = "Mumbai";
 				//Display address
-				addressDisplay.innerHTML = "Address: " + smallAddressFormat();
+				connectButton.innerHTML =  smallAddressFormat();
 
 				//Check cost and maxMintable then enable the right button
 				await refresh();		
@@ -110,7 +115,7 @@ const initialize = () => {
 			console.error(error);
 			connectButton.innerHTML = "Error...";
 		}
-	
+		
 	};
 
 	/* APPROVE WETH */
@@ -154,12 +159,12 @@ const initialize = () => {
 						textInfo.innerHTML = "Tx confirmed!<br>Click MINT to get your " + mintAmount + " $LOVET."
 					}
 					else{
-						textInfo.innerHTML = "Something goes wrong, check the transaction and retry."
+						textInfo.innerHTML = "Something went wrong, check the transaction or retry."
 						approveButton.disabled = false;
 					}
 				} catch (error){
 					console.log(`Error: ${error.message}`);
-					textInfo.innerHTML = "Something goes wrong, check the transaction or retry."
+					textInfo.innerHTML = "Something went wrong, check the transaction or retry."
 					approveButton.disabled = false;
 				}
 			});	
@@ -169,18 +174,17 @@ const initialize = () => {
 		}    		
 	};
 
-	/* LOAD METADATA + IMAGE FROM IPFS (add metadata attribute 2) */
+	/* Load metadata & image from IPFS */
 	const get_img = async (tokenId) => {
 		//Get metadata from contract
 		nft_contract.methods.tokenURI(tokenId).call().then( async function (result) {
-			const json_URL = "https://ipfs.io/ipfs/" + result.substring(7);
-			img.data = "images/logo_animated.svg";
+			const json_URL = IPFS_GATEWAY + result.substring(7);
 
 			//Get image from IPFS
 			try{
 				$.getJSON(json_URL, function(data) {
 					var img_URL = data.image;
-					const image_URI = "https://ipfs.io/ipfs/" + img_URL.substring(7);		
+					const image_URI = IPFS_GATEWAY + img_URL.substring(7);		
 					textInfo.innerHTML = "Here is what you get: " + data.name + "<br>" +
 											"Type: " + data.attributes[0].value + ", Area: " + data.attributes[1].value  + "<br>" +
 											"I'm loading the image...";
@@ -203,12 +207,13 @@ const initialize = () => {
 				});
 			}catch(error){
 				console.log(`Error: ${error.message}`);
-				textInfo.innerHTML = "Sorry, something goes wrong, check on OpenSea.";
+				textInfo.innerHTML = "Sorry, something went wrong, check on OpenSea.";
+				img.data = "images/logo.svg";
 			}	
 		});		
 	}
 
-	/* SEND MINT TRANSACTION AND CATCH EVENTS */
+	/* MINT */
 	mintButton.onclick = async () => {
 		mintButton.disabled=true;
 		var tokenId;
@@ -241,7 +246,6 @@ const initialize = () => {
 
 				//GET TOKEN ID FROM TX
 				if (txReceipt.status){
-					img.data = "images/logo.svg";
 					textInfo.innerHTML="Your tx has been confirmed! I'm loading your new NFT...";				
 					
 					//Get tokenId
@@ -253,23 +257,33 @@ const initialize = () => {
 					}
 				}
 				else{
-					textInfo.innerHTML = "Something goes wrong, check the transaction or retry.";
+					textInfo.innerHTML = "Something went wrong, check the transaction or retry.";
+					img.data = "images/logo.svg";
 					mintButton.disabled=false;
 				}
 			} catch (error){
 				console.log(`Error: ${error.message}`);
-				textInfo.innerHTML = "Something goes wrong, check the transaction or retry.";
+				textInfo.innerHTML = "Something went wrong, check the transaction or retry.";
+				img.data = "images/logo.svg";
 				mintButton.disabled=false;
 			}
 		} else{
 			console.log("Error no address no mintAmount");
+			img.data = "images/logo.svg";
 			mintButton.disabled=false;
 		}    
-		//Image request from IPFS
+		//Wait totalSupply update and request the image from IPFS
+		let totSupply = 0; 
+		while (totSupply < tokenId) { 
+			await sleep(1000)
+			totSupply = await nft_contract.methods.getTotalSupply().call().then( async function (result) {
+				return result;
+			});
+		}
 		get_img(tokenId);
 	}
 
-	/* REFRESH PRICE AND SUPPLY */
+	/* Refresh contract status */
 	const refresh = async () => {
 		//Get cost
 		await nft_contract.methods.cost().call().then(async function (result) {
@@ -282,6 +296,11 @@ const initialize = () => {
 		await nft_contract.methods.maxMintable().call().then(async function (result) {
 			maxMintable = parseInt(result);
 		});
+		//Get contract state
+		await nft_contract.methods.paused().call().then(async function (result) {
+			paused = result;
+		});
+
 		//Get Supply
 		const response_maxMintable = await nft_contract.methods.getTotalSupply().call().then(async function (result) {
 			if(result < maxMintable){
@@ -304,20 +323,25 @@ const initialize = () => {
 			const response = await nft_contract.methods.balanceOf(ethereum.selectedAddress).call().then(async function (result) {
 				tokenBalance = parseInt(result);
 				if ( tokenBalance >= maxTokenWallet ) {
-					textInfo.innerHTML = "You already have enough $LOVET!"
+					textInfo.innerHTML = "You already have enough $LOVET!";
 					return false;
 				}
 				else {
-					if(response_maxMintable){
+					if(response_maxMintable && !paused){
 						if ( cost > 0) {
 							if(!approved){
-							textInfo.innerHTML = "Then click APPROVE to allow to spend WETH."
+							textInfo.innerHTML = "Then click APPROVE to allow to spend WETH.";
 							approveButton.disabled = false;
 							}
 						}
 						else{
-							textInfo.innerHTML = "Then click MINT."
+							textInfo.innerHTML = "Then click MINT.";
 							mintButton.disabled = false;
+						}
+					}
+					else{
+						if (paused){
+							textInfo.innerHTML = "The minting is paused";
 						}
 					}					
 					return true;
@@ -328,7 +352,7 @@ const initialize = () => {
 		return response_maxWallet && response_maxMintable;
 	};
 
-	/* METAMASK EVENTS */
+	/* Metamask Events */
 	ethereum.on('chainChanged', (chainId) => {
 	// Handle the new chain.
 	// Correctly handling chain changes can be complicated.
@@ -350,4 +374,16 @@ const initialize = () => {
 }
 
 window.addEventListener('DOMContentLoaded', initialize)
+
+/* Vivus */
+new Vivus('logo',
+        {
+          type: "delayed",
+          duration: 100,
+          start: "inViewport"
+});
+/* Loading */
+$(window).on("load",function(){
+	$(".loader-wrapper").fadeOut("slow");
+});
 
