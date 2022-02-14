@@ -100,7 +100,7 @@ const initialize = () => {
 
 			//Get chain id 
 			if(chainId == CHAIN_ID ){ 
-				connectButton.innerHTML = "Mumbai";
+				connectButton.innerHTML = "Polygon";
 				//Display address
 				connectButton.innerHTML =  smallAddressFormat();
 
@@ -108,7 +108,7 @@ const initialize = () => {
 				await refresh();		
 			}
 			else{ 
-				connectButton.innerHTML = "use Mumbai";
+				connectButton.innerHTML = "use Polygon";
 			}
 			
 		} catch (error) {
