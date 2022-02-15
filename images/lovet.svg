@@ -1,0 +1,9 @@
+<svg id="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!--<polyline points="0 0 100 0 100 100 0 100 0 0" fill="black" />-->        
+          <circle cx="62.5" cy="53.35" r="20"  stroke="yellow" stroke-width="3"/>
+          <circle cx="62.5" cy="53.35" r="10"  stroke="yellow" stroke-width="3"/>          
+          <polyline points="25 75 50 31.7 75 75 25 75 50 31.7" stroke="green" fill="black" stroke-width="3"/>
+          <polyline points="37.5 75 31.25 64.17" stroke="green"  stroke-width="3"/>
+          <polyline points="62.5 75 43.75 42.52" stroke="green" stroke-width="3"/>
+          <line x1="15" y1="80" x2="85" y2="80" stroke="blue" stroke-width="3"/>
+        </svg>
