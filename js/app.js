@@ -155,7 +155,7 @@ const initialize = () => {
 					if (txReceipt.status){		
 						mintButton.disabled = false;
 						approved = true;
-						img.data = "images/logo.svg";
+						img.data = "images/lovet.svg";
 						textInfo.innerHTML = "Tx confirmed!<br>Click MINT to get your " + mintAmount + " $LOVET."
 					}
 					else{
@@ -208,7 +208,7 @@ const initialize = () => {
 			}catch(error){
 				console.log(`Error: ${error.message}`);
 				textInfo.innerHTML = "Sorry, something went wrong, check on OpenSea.";
-				img.data = "images/logo.svg";
+				img.data = "images/lovet.svg";
 			}	
 		});		
 	}
@@ -258,18 +258,18 @@ const initialize = () => {
 				}
 				else{
 					textInfo.innerHTML = "Something went wrong, check the transaction or retry.";
-					img.data = "images/logo.svg";
+					img.data = "images/lovet.svg";
 					mintButton.disabled=false;
 				}
 			} catch (error){
 				console.log(`Error: ${error.message}`);
 				textInfo.innerHTML = "Something went wrong, check the transaction or retry.";
-				img.data = "images/logo.svg";
+				img.data = "images/lovet.svg";
 				mintButton.disabled=false;
 			}
 		} else{
 			console.log("Error no address no mintAmount");
-			img.data = "images/logo.svg";
+			img.data = "images/lovet.svg";
 			mintButton.disabled=false;
 		}    
 		//Wait totalSupply update and request the image from IPFS
