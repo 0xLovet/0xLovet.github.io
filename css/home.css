@@ -217,6 +217,9 @@ background-color: rgba(0, 0, 0, 0.9);
 .mobile-break { 
   display: inherit;
 }
+.space{
+  height: 50px;
+}
 
 }
 @media screen and (max-width: 900px) {
