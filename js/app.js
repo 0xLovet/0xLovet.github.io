@@ -82,9 +82,6 @@ const initialize = () => {
 	getBG();
 	countdown();
 	
-	const web3 = new Web3(window.ethereum);
-	const nft_contract = new web3.eth.Contract(nft_abi, NFT_ADDRESS);
-
 	const MetaMaskClientCheck = () => {
 	if (!isMetaMaskInstalled()) {
 		connectButton.innerHTML = "Please install MetaMask!";
