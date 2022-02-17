@@ -25,6 +25,8 @@ var maxTokenWallet;
 var tokenBalance;
 var maxMintable;
 var paused;
+var web3;
+var nft_contract;
 
 
 const sleep = (milliseconds) => {
@@ -74,10 +76,7 @@ const countdown = () => {
 }
 
 const initialize = () => {
-
-    const web3 = new Web3(window.ethereum);
-	const nft_contract = new web3.eth.Contract(nft_abi, NFT_ADDRESS);
-
+	
 	approveButton.disabled = true;
 	mintButton.disabled = true;
 
@@ -93,6 +92,8 @@ const initialize = () => {
 	/* CONNECT button */
 	connectButton.onclick = async () => {
 		connectButton.disabled=true;
+		web3 = new Web3(window.ethereum);
+		nft_contract = new web3.eth.Contract(nft_abi, NFT_ADDRESS);
 		try {
 			//Login
 			await ethereum.request({ method: 'eth_requestAccounts' });
