@@ -113,7 +113,7 @@ const initialize = () => {
 			
 		} catch (error) {
 			console.error(error);
-			connectButton.innerHTML = "Error...";
+			connectButton.innerHTML = "Error: MetaMask is required!";
 		}
 		
 	};
