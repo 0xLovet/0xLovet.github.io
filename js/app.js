@@ -290,6 +290,35 @@ const initialize = () => {
 		}
 		get_img(tokenId);
 	}
+	
+	/* AddToken to MetaMask */
+	addToken.onclick = async () => {
+		addToken.disabled = true;
+		try {
+			// wasAdded is a boolean. Like any RPC method, an error may be thrown.
+			const wasAdded = await ethereum.request({
+			  method: 'wallet_watchAsset',
+			  params: {
+				type: 'ERC20',
+				options: {
+				  address: NFT_ADDRESS, // The address that the token is at.
+				  symbol: 'LOVET', // A ticker symbol or shorthand, up to 5 chars.
+				  decimals: 0, // The number of decimals in the token
+				  image: "https://0xlovet.com/images/lovet.svg", // A string url of the token logo
+				},
+			  },
+			});
+		  
+			if (wasAdded) {
+			  console.log('Thanks for your interest!');
+			} else {
+			  console.log('Your loss!');
+			}
+		  } catch (error) {
+			console.log(error);
+		  }
+
+	}
 
 	/* Refresh contract status */
 	const refresh = async () => {
