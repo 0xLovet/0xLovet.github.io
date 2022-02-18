@@ -193,16 +193,16 @@ const initialize = () => {
 				$.getJSON(json_URL, function(data) {
 					var img_URL = data.image;
 					const image_URI = IPFS_GATEWAY + img_URL.substring(7);		
-					textInfo.innerHTML = "Here is what you get: " + data.name + "<br>" +
-											"Type: " + data.attributes[0].value + ", Area: " + data.attributes[1].value  + "<br>" +
+					textInfo.innerHTML = "Here is what you got: " + data.name + "<br>" +
+											"Type: " + data.attributes[0].value + ", Background: " + data.attributes[1].value  + ", Area: " + data.attributes[2].value  + "<br>" +
 											"I'm loading the image...";
 					//Load image
 					downloadingImage.onload = function() {
 						imgLink.href = image_URI;
 						img.data = this.src;
-						textInfo.innerHTML = "Here is what you get: " + data.name + "<br>" +
-												"Type: " + data.attributes[0].value + ", Area: " + data.attributes[1].value  + "<br>" +
-												"Done! View on OpenSea";
+						textInfo.innerHTML = "Here is what you got: " + data.name + "<br>" +
+												"Type: " + data.attributes[0].value + ", Background: " + data.attributes[1].value  + ", Area: " + data.attributes[2].value  + "<br>" +
+												"Done! You can view it on OpenSea";
 						//Enable another mint
 						if (cost > 0){
 							approveButton.disabled = false;
