@@ -194,6 +194,12 @@ background-color: rgba(0, 0, 0, 0.9);
   top: 0%;
   z-index: 2;
 }
+.mm-fox{
+  vertical-align: text-bottom;
+  width: 25px; 
+  height: 25px;
+  padding-left: 5px;
+}
 .bg-num{
   position: fixed;
   right: 2%;
@@ -220,13 +226,6 @@ background-color: rgba(0, 0, 0, 0.9);
 .space{
   height: 50px;
 }
-.mm-fox{
-  vertical-align: text-bottom;
-  width: 25px; 
-  height: 25px;
-  padding-left: 5px;
-}
-
 }
 @media screen and (max-width: 900px) {
 
