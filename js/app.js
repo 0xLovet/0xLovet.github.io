@@ -59,7 +59,7 @@ const smallAddressFormat = () => {
 const getBG = () => {
 	var n = Math.floor(Math.random() * MAX_SUPPLY);
 	document.getElementById("bgNumber").innerHTML = "#" + n;
-	document.body.style.backgroundImage = "url('" + IPFS_GATEWAY + "QmQ4JgsyDsugEHqc6BtSBT8wPcHAX6LN2yHyY2rDsvkmd1/" + n + ".svg'";
+	document.body.style.backgroundImage = "url('" + IPFS_GATEWAY + "QmcqwVZVEiZv3yAzVF7T2zRxPfGem4L6kKwsGo2Vq2D7QD/" + n + ".svg'";
 }	
 
 const countdown = () => {
