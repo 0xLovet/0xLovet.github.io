@@ -220,6 +220,12 @@ background-color: rgba(0, 0, 0, 0.9);
 .space{
   height: 50px;
 }
+.mm-fox{
+  vertical-align: text-bottom;
+  width: 25px; 
+  height: 25px;
+  padding-left: 5px;
+}
 
 }
 @media screen and (max-width: 900px) {
