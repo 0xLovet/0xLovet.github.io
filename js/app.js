@@ -27,6 +27,14 @@ var maxMintable;
 var paused;
 
 
+function scrollSmoothTo(elementId) {
+	var element = document.getElementById(elementId);
+	element.scrollIntoView({
+	  block: 'start',
+	  behavior: 'smooth'
+	});
+}
+
 const sleep = (milliseconds) => {
 	return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
