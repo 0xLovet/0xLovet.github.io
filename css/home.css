@@ -6,8 +6,7 @@ body {
     color: white;
     height: 100%;
     width: 100%;
-    background-image: url("../images/bg.svg");
-    background: center;
+    background: center blue;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
