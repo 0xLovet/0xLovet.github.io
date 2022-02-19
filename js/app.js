@@ -1,6 +1,6 @@
 const NFT_ADDRESS = "0x5fB74c1597D43db0b326E27f8acd2270f80eC2e0"; //LOVET (Polygon)
 const TOKEN_ADDRESS = "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"; //WETH (Polygon)
-const IPFS_GATEWAY = "https://gateway.pinata.cloud/ipfs/"
+const IPFS_GATEWAY = "https://gateway.ipfs.io/ipfs/"
 const MAX_MINT_AMOUNT = 1;
 const MAX_SUPPLY = 1024;
 const CHAIN_ID = 137;
