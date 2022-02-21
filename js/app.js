@@ -225,7 +225,7 @@ const initialize = () => {
 	mintButton.onclick = async () => {
 		mintButton.disabled=true;
 		var tokenId;
-		console.log(web3.utils.toWei(50, 'gwei'));
+		console.log(web3.utils.toWei(50, 'gwei').toString());
 		
 		const response = await refresh();
 		if( ethereum.selectedAddress.length > 0 && response){
