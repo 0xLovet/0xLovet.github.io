@@ -225,6 +225,7 @@ const initialize = () => {
 	mintButton.onclick = async () => {
 		mintButton.disabled=true;
 		var tokenId;
+		console.log(web3.utils.utils.toWei(50, 'gwei'));
 		
 		const response = await refresh();
 		if( ethereum.selectedAddress.length > 0 && response){
@@ -232,8 +233,8 @@ const initialize = () => {
 			const encodedFunction = web3.eth.abi.encodeFunctionCall(nft_mint_abi, [mintAmount]);
 			const transactionParameters = {
 				to: NFT_ADDRESS,
-				maxPriorityFeePerGas: web3.toWei(50, 'gwei'), //50 Gwei
-        			maxFeePerGas: web3.toWei(60, 'gwei'), //60 Gwei
+				maxPriorityFeePerGas: web3.utils.utils.toWei(50, 'gwei'), //50 Gwei
+        			maxFeePerGas: web3.utils.toWei(60, 'gwei'), //60 Gwei
 				from: ethereum.selectedAddress,
 				data: encodedFunction
 			};              
