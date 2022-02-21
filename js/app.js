@@ -63,7 +63,7 @@ const getBG = () => {
 }	
 
 const countdown = () => {
-	var countDownDate = new Date("Feb 21, 2022 20:00:00").getTime();
+	var countDownDate = new Date("Feb 21, 2022 15:00:00").getTime();
 	var x = setInterval(function() {
 		var now = new Date().getTime();
 		var distance = countDownDate - now;
