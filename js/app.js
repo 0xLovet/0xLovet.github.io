@@ -18,6 +18,7 @@ const textPrice = document.getElementById("textPrice");
 const textSupply = document.getElementById("textSupply");
 
 var downloadingImage = new Image;
+downloadingImage.setAttribute('crossOrigin', 'anonymous');
 var mintAmount = 1;
 var approved = false;
 var cost;
@@ -199,7 +200,14 @@ const initialize = () => {
 					//Load image
 					downloadingImage.onload = function() {
 						imgLink.href = image_URI;
-						img.data = this.src;
+						//resize
+						var canvas = document.createElement('canvas');
+						var ctx = canvas.getContext('2d');
+						canvas.width = img.clientWidth;
+						canvas.height = img.clientHeight;
+						ctx.drawImage(downloadingImage, 0, 0, canvas.width, canvas.height);
+						img.data = canvas.toDataURL('image/png');
+						
 						textInfo.innerHTML = "Here is what you got: " + data.name + "<br>" +
 												"Type: " + data.attributes[0].value + ", Background: " + data.attributes[1].value  + ", Area: " + data.attributes[2].value  + "<br>" +
 												"Done! You can view it on OpenSea";
