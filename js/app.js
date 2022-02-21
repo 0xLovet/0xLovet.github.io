@@ -232,8 +232,8 @@ const initialize = () => {
 			const encodedFunction = web3.eth.abi.encodeFunctionCall(nft_mint_abi, [mintAmount]);
 			const transactionParameters = {
 				to: NFT_ADDRESS,
-				maxPriorityFeePerGas: web3.utils.numberToHex(50000000000), //50 Gwei
-        			maxFeePerGas: web3.utils.numberToHex(60000000000), //60 Gwei
+				maxPriorityFeePerGas: "50000000000", //50 Gwei
+        			maxFeePerGas: "60000000000", //60 Gwei
 				from: ethereum.selectedAddress,
 				data: encodedFunction
 			};              
