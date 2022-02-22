@@ -11,7 +11,6 @@ const mintButton = document.getElementById("mintButton");
 
 const imgLink = document.getElementById("mint-img-link");
 const img = document.getElementById("logo");
-const totalSupply = document.getElementById("totalSupply");
 const textInfo = document.getElementById("textInfo");
 const textPrice = document.getElementById("textPrice");
 const textSupply = document.getElementById("textSupply");
