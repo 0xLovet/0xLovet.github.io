@@ -6,7 +6,6 @@ const MAX_SUPPLY = 1024;
 const CHAIN_ID = 137;
 
 const connectButton = document.getElementById('connectButton');
-const addressDisplay = document.getElementById("addressDisplay");
 const approveButton = document.getElementById("approveButton");
 const mintButton = document.getElementById("mintButton");
 
