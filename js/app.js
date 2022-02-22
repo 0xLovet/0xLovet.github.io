@@ -408,8 +408,8 @@ const initialize = () => {
 	if (accounts.length > 0){
 		console.log(`Account connected: ${accounts[0]}`);
 		//Display address
-		connectButton.innerHTML = "Address: " + smallAddressFormat();
-		refresh();
+		connectButton.innerHTML = smallAddressFormat();
+		//refresh();
 	}
 	else
 		console.log("Account disconnected");
