@@ -410,7 +410,7 @@ const initialize = () => {
 	if (accounts.length > 0){
 		console.log(`Account connected: ${accounts[0]}`);
 		//Display address
-		addressDisplay.innerHTML = "Address: " + smallAddressFormat();
+		connectButton.innerHTML = "Address: " + smallAddressFormat();
 		refresh();
 	}
 	else
