@@ -14,6 +14,7 @@ const img = document.getElementById("logo");
 const textInfo = document.getElementById("textInfo");
 const textPrice = document.getElementById("textPrice");
 const textSupply = document.getElementById("textSupply");
+const refreshIcon = document.getElementById("refreshIcon");
 
 var downloadingImage = new Image;
 downloadingImage.setAttribute('crossOrigin', 'anonymous');
@@ -55,12 +56,6 @@ const smallAddressFormat = () => {
 	return addr;
 }
 
-const getBG = () => {
-	var n = Math.floor(Math.random() * MAX_SUPPLY);
-	document.getElementById("bgNumber").innerHTML = "#" + n;
-	document.body.style.backgroundImage = "url('" + IPFS_GATEWAY + "QmcqwVZVEiZv3yAzVF7T2zRxPfGem4L6kKwsGo2Vq2D7QD/" + n + ".svg'";
-}	
-
 const countdown = () => {
 	var countDownDate = new Date("Feb 21, 2022 15:00:00").getTime();
 	var x = setInterval(function() {
@@ -85,7 +80,6 @@ const initialize = () => {
 	approveButton.disabled = true;
 	mintButton.disabled = true;
 
-	getBG();
 	countdown();
 	
 	const web3 = new Web3(window.ethereum);
@@ -395,6 +389,18 @@ const initialize = () => {
 			return response;
 		});
 		return response_maxWallet && response_maxMintable;
+	};
+	
+	/* Swap Bg */
+	swapBgButton.onclick = () => {
+		refreshIcon.src = "images/refresh_animated.svg";
+		var newBg = new Image;
+		var n = Math.floor(Math.random() * MAX_SUPPLY);
+		newBg.onload = function() {
+			document.body.style.backgroundImage = "url('" + newBg.src + "')";
+			refreshIcon.src = "images/refresh.svg";
+		};			
+		newBg.src = IPFS_GATEWAY + "QmcqwVZVEiZv3yAzVF7T2zRxPfGem4L6kKwsGo2Vq2D7QD/" + n + ".svg";
 	};
 
 	/* Metamask Events */
