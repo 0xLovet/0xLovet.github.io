@@ -99,6 +99,7 @@ background-color: rgba(0, 0, 0, 0.9);
 }
 .mint-img{
   width: 100%;
+  aspect-ratio: 1 / 1;
   pointer-events: none;
   background-color:rgba(0, 0, 0,0);
   display: block;
