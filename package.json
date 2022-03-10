@@ -1,0 +1,22 @@
+{
+  "name": "Generative-Art",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "static-server . --port 9011"
+  },
+  "author": "Psi",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "eslint": "^8.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-json": "^3.0.1",
+    "static-server": "^2.2.1"
+  },
+  "dependencies": {
+    "npm-check": "^5.9.2"
+  }
+}

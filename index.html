@@ -48,7 +48,9 @@
 
       <!-- Countdown and mint now button-->
       <div class="center">
-        <a id="countdownButton" class="button button1" onclick="scrollSmoothTo('mint-window')">MINT NOW</a>
+        <a id="countdownButton" class="button button1" onclick="scrollSmoothTo('roadmap')">ROADMAP</a>
+        <a id="countdownButton" class="button button1" href="https://gallery.0xlovet.com/" target="_blank">ART GALLERY</a>
+        <a id="countdownButton" class="button button1" href="https://opensea.io/collection/0xlovet" target="_blank">BUY NOW</a>
       </div>
       
       <!-- Social Icons -->
@@ -62,7 +64,7 @@
         <a href="https://twitter.com/0xLovet" target="_blank">
           <img class="social-icons-img" src="images/twitter.svg" width="50" height="50" alt="nft twitter, crypto twitter, lovet twitter">  
         </a>
-	<a href="https://medium.com/@0xLovet" target="_blank">
+	      <a href="https://medium.com/@0xLovet" target="_blank">
           <img class="social-icons-img" src="images/medium.svg" width="50" height="50" alt="nft medium, crypto medium, lovet medium">  
         </a>
         <a href="https://www.youtube.com/channel/UCW4mreBBaTuFjaF56o7oJ1A" target="_blank">
@@ -77,36 +79,34 @@
 
     </div>
 	  <div class="space"></div>
-    <!-- Section 2 -->
-    <div id="mint-window" class="mint-window" >
 
-      <!-- Connect Button -->
-      <div class="connect">
-        <div class="button button1"><a id="connectButton">CONNECT</a><img class="mm-fox" src="images/metamask-fox.svg"></div>
-      </div>
-      
-      <!-- Image and base info-->
-      <div class="img-container">
-        <a id="mint-img-link" href="images/lovet.svg" target="_blank">
-          <object id="logo" class="mint-img" type="image/svg+xml" data="images/lovet.svg"></object>
-        </a>
-   
-        <h4 id="textPrice" class="textPrice slider">PRICE: ? </h4>
-        <h4 id="textSupply" class="textSupply slider">MINTED: ?/1024</h4>      
-        <h5 id="textInfo" class="textInfo slider">Click the CONNECT button to login with MetaMask.<br>Use the Polygon network.</h5>
-      </div>
+    <!-- Roadmap -->
+    <div id="roadmap">
+      <h2 class="sub-title">ROADMAP</h2>
+      <div class="roadmap">
+    
+        <div class="month delay-1" style="background: url('../images/124.svg'); background-size: cover;" >
+          <h1>MARCH</h1>
+            <h3>LOVET Interactive Art Gallery<br>(beta):<br> 2 700 000 m<sup>3</sup> of 3D-exhibition space for virtual art on the Polygon blockchain. <br>&<br>Discord channel release.</h3>
+        </div>
+        
+        <div class="month delay-2" style="background: url('../images/409.svg'); background-size: cover;" >
+          <h1>APRIL</h1>
+            <h3>LOVET Interactive Art Gallery<br>(v1):<br> you will be able to expose your NFTs in the gallery for free.</h3>
+        </div>
 
-      <!--APPROVE and MINT buttons-->
-      <div class="center">
-        <button id="approveButton" class="button button1">APPROVE</button>
-        <button id="mintButton" class="button button1">MINT</button>
-      </div>
+        <div class="month delay-3" style="background: url('../images/435.svg'); background-size: cover;" >
+          <h1>MAY</h1>
+            <h3 >LOVET DeMarket<br>(beta):<br>The first Decentralized NFT Marketplace on Polygon completely managed by smart contracts.<br>Platform fee to $LOVET holders.</h3>
+        </div>
 
-      <div class="center" style="height: 100px;">
-        <div id="addToken" class="button button1" >
-          <a id="connectButton">Add $LOVET</a><img class="mm-fox" src="images/metamask-fox.svg" ></div>
+        <div class="month delay-4" style="background: url('../images/967.svg'); background-size: cover;" >
+          <h1>JUNE</h1>
+            <h3>LOVET DeMarket<br>(v1):<br> full-fledged NFT marketplace both in Dapp and in 3D. List your NFTs or create them without any coding skills.</h3>
+        </div>
+
       </div>
-    </div>
+    </div>    
 
     <!-- Footer -->
     <div class="footer">
@@ -121,7 +121,7 @@
         <a href="https://twitter.com/0xLovet" target="_blank">
           <img  src="images/twitter.svg" width="30" height="30" alt="nft twitter, crypto twitter, lovet twitter">  
         </a>
-	<a href="https://medium.com/@0xLovet" target="_blank">
+	      <a href="https://medium.com/@0xLovet" target="_blank">
           <img src="images/medium.svg" width="30" height="30" alt="nft medium, crypto medium, lovet medium">  
         </a>
         <a href="https://www.youtube.com/channel/UCW4mreBBaTuFjaF56o7oJ1A" target="_blank">
@@ -133,10 +133,10 @@
           <img  src="images/polygon-black.svg" width="100" height="20"  alt="nft smart contract, lovet token, polygon">  
         </a>
       </div>
-      <h5 style="font-size: 10px;">Created by Psi. v1.0.0</h5>
+      <h5 style="font-size: 10px;">Created by Psi. v1.1.0</h5>
     </div>
 
-    <!-- swap BG -->
+    <!-- Swap BG -->
     <div class="bg">
       <div class="button button1"><a id="swapBgButton">Background</a><img id="refreshIcon" class="refresh" src="images/refresh.svg" ></div>
     </div>
@@ -149,10 +149,8 @@
 
   </body>
  
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+    <!-- Scripts -->    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="js/solidity_abi.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/home.js" ></script>
+
 </html> 

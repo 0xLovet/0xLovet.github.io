@@ -6,7 +6,7 @@ body {
     color: white;
     height: 100%;
     width: 100%;
-    background: center, url('../images/bg.svg');;
+    background: center, url('../images/bg.svg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -41,83 +41,6 @@ body {
 /**/
 /******/
   
-/*** Mint-Window ***/
-.mint-window{
-  height: auto;
-  width: 100%;
-  min-width: 350px;
-  margin: auto;
-  margin-top: 10px;
-  background-color: rgba(0, 0, 0,0);
-}
-/* Nav Bar */
-.menu {
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
-background-color: rgba(0, 0, 0, 1);
-top: 0;
-}
-.menu-info {
-float: left;
-}
-.menu-info a {
-display: block;
-color: white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-}
-.menu-item {
-float: right;
-}
-.menu-item a {
-display: block;
-color: white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-cursor: pointer;
-}
-.menu-item a:hover:not(.active) {
-background-color: rgba(0, 0, 0, 0.9);
-}
-/**/
-.img-container{
-  width: 60%;
-  height: 500px;
-  max-width: 400px;
-  min-width: 350px;
-  background-color: rgba(0, 0, 0,0.5);
-  display: block;
-  margin: auto;
-  position:relative;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0,0.5);
-  border-radius: 20px;
-  z-index: 1;
-}
-.mint-img{
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  pointer-events: none;
-  background-color:rgba(0, 0, 0,0);
-  display: block;
-  margin: auto;
-}
-.textPrice{
-  float: left;
-  margin: 10px;
-}
-.textSupply{
-  float: right;
-  margin: 10px;
-}
-.textInfo{
-  margin-top: 30px;
-  text-align: center;
-  padding: 10px;
-}
 /* Buttons */
 .button {
   border: none;
@@ -145,13 +68,7 @@ background-color: rgba(0, 0, 0, 0.9);
   filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(324deg) brightness(96%) contrast(104%);
 }
 /**/
-/* Info */
-.text-window{
-  line-height: 1.6;
-  width: 100%;
-  margin-top: 10px;
-  padding-top: 10px;
-}
+
 .center{
   text-align: center;
   font-size: 20px;
@@ -162,11 +79,6 @@ background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
   padding: 5px;
 }
-.links{
-  color:white; 
-}
-/**/
-/*****/
 
 /* Loading */
 .loader-wrapper {
@@ -191,18 +103,6 @@ background-color: rgba(0, 0, 0, 0.9);
   z-index: 3;
 }
 /**/
-.connect{
-  position: fixed;
-  right: 0%;
-  top: 0%;
-  z-index: 2;
-}
-.mm-fox{
-  vertical-align: text-bottom;
-  width: 25px; 
-  height: 25px;
-  padding-left: 5px;
-}
 .refresh{
   vertical-align: text-bottom;
   width: 25px; 
@@ -216,11 +116,75 @@ background-color: rgba(0, 0, 0, 0.9);
   bottom: 0%;
 }
 
+/* Roadmap */
+.sub-title{
+  text-align: center;
+  font-size: 60px;
+  margin-top: 100px;
+  text-shadow: 10px 10px 10px  #000000;
+}
+.roadmap{
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 200px;
+  width: 80%;
+  height: fit-content;
+  display: grid;
+  grid-template: min-content / auto auto auto auto;
+  grid-gap: 20px;
+  background-color: rgba(0,0,0, 0.5);;
+  padding: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0,0.5);
+  border-radius: 20px;
+}
+.month{
+  line-height: 1.6;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0,0.5);
+  border-radius: 20px;
+  transition: transform 0.5s; /* Animation */
+}
+.month:hover{
+  transform: scale(1.05);
+}
+.month.active{
+  animation-name: scale;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+
+}
+@keyframes scale {
+  0% {transform: scale(1.0);}
+  50% {  transform: scale(1.05);}
+  100% {transform: scale(1.0);}
+}
+.delay-1{
+  animation-delay: 0.2s;
+}
+.delay-2{
+  animation-delay: 0.4s;
+}
+.delay-3{
+  animation-delay: 0.6s;
+}
+.delay-4{
+  animation-delay: 0.8s;
+}
+/**/
+
 @media screen and (max-width: 600px) {
+
   .title{
     font-size: 70px;
     margin-top: 50px;
     padding: 10px 10px;
+  }
+  .sub-title{
+    font-size: 50px;
+    margin-top: 50px;
   }
   .button {
     margin: 10px 10px;
@@ -235,6 +199,10 @@ background-color: rgba(0, 0, 0, 0.9);
   }
 }
 @media screen and (max-width: 900px) {
+
+  .roadmap{
+    grid-template: auto auto auto auto / 100%;
+  }
 
   body{
     background-attachment: scroll;
