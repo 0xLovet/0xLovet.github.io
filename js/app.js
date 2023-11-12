@@ -241,8 +241,8 @@ const initialize = () => {
 			// As with any RPC call, it may throw an error
 			try {
 				const txHash = await ethereum.request({
-				method: 'eth_sendTransaction',
-				params: [transactionParameters],
+					method: 'eth_sendTransaction',
+					params: [transactionParameters],
 				});
 				img.data = "images/logo_animated.svg";	
 				textInfo.innerHTML = "Waiting tx...";
@@ -267,7 +267,7 @@ const initialize = () => {
 					}
 				}
 				else{
-					textInfo.innerHTML = "Something went wrong, check the transaction or retry.";
+					textInfo.innerHTML = 'Something went wrong, check the transaction or retry.';
 					img.data = "images/lovet.svg";
 					mintButton.disabled=false;
 				}
@@ -326,7 +326,11 @@ const initialize = () => {
 	const refresh = async () => {
 		//Get cost
 		await nft_contract.methods.cost().call().then(async function (result) {
-			cost = web3.utils.fromWei(result);
+			if (result == ""){
+				cost = 0
+			}else{
+				cost = web3.utils.fromWei(result);
+			}			
 			if(cost == 0){
 				approved = true;
 			}
