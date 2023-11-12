@@ -326,11 +326,8 @@ const initialize = () => {
 	const refresh = async () => {
 		//Get cost
 		await nft_contract.methods.cost().call().then(async function (result) {
-			if (result == ""){
-				cost = 0
-			}else{
-				cost = web3.utils.fromWei(result);
-			}			
+			cost = Number(web3.utils.fromWei(result, "ether"));			
+			console.log(cost)			
 			if(cost == 0){
 				approved = true;
 			}
